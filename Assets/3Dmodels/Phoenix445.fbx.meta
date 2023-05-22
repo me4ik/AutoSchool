@@ -3,7 +3,47 @@ guid: 94e7f9fdcee8d1443bfc323886d0e897
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GEN4DR_INTERIOR
+    second: {fileID: 2100000, guid: 7db9353ba96c36943af702e19fc5c73b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GENERIC_BADGES
+    second: {fileID: 2100000, guid: 7705dcf38f712f047ad15bb7d8d7b8a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Numberplates
+    second: {fileID: 2100000, guid: 3bd5b83663a832d47affa20143cf8b51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RIMMUSCLE_01
+    second: {fileID: 2100000, guid: aa84b591f2335984d9a08413dcec5466, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Riverside88_lights
+    second: {fileID: 2100000, guid: 7d67a94c13922be43b463fc1de0abab9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UCB_BOTTOM
+    second: {fileID: 2100000, guid: b02e200e71303f4479dad3405a142fcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UCB_GLASS_CLEAN
+    second: {fileID: 2100000, guid: 29e8304ba5420754faddd3544a77cbd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 79c9b8682b861f24a8b45d74e9088df3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
