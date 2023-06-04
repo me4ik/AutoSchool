@@ -52,6 +52,8 @@ public class CarLogic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //TimeStop.isPaused = true;
+
         if (other.CompareTag("Slow"))
         {
             Slowing = true;
