@@ -17,6 +17,7 @@ public class TextLogic : MonoBehaviour
          if (NeedStop)
         {
             TimeStop.isPaused = true;        //в инспекторе можно включить флажок, чтобы при пересечении этого триггера время стопалось
+            Debug.Log("Пауза");
         }
     }
 }

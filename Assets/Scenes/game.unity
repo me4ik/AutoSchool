@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
-  m_FogMode: 1
-  m_FogDensity: 0.01
+  m_FogColor: {r: 0.63759345, g: 0.66170317, b: 0.6792453, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.0003
   m_LinearFogStart: 0
   m_LinearFogEnd: 552.01
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -25,9 +25,9 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0, g: 0.015614847, b: 0.05660379, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 4067de1a02072244798361060c5e7325, type: 2}
-  m_HaloStrength: 0.334
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: eac2ef371405749e0bd050b4c3272f16, type: 2}
+  m_HaloStrength: 0.311
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2117955937}
-  m_IndirectSpecularColor: {r: 0.25330132, g: 0.21698837, b: 0.23319197, a: 1}
+  m_IndirectSpecularColor: {r: 0.00313068, g: 0.0061691664, b: 0.014243009, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,7 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f0735234a27b04789cd6e0c27b0ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 0.5
+  hand: 0
+  smoothTime: 1
 --- !u!1 &178121853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SetText: "\u0412\u044B \u043F\u0435\u0440\u0435\u0441\u0435\u043A\u043B\u0438 \u0444\u0430\u0441\u0442
     \u0442\u0440\u0438\u0433\u0433\u0435\u0440"
-  NeedStop: 0
+  NeedStop: 1
 --- !u!1 &855624842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,7 +2347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb5612798bc82c4cac578e5e0cc806b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SetText: Zig Hail!!
+  SetText: Asuzhdau
   NeedStop: 0
 --- !u!65 &1662017819
 BoxCollider:
@@ -3012,8 +3013,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1.6
+  m_Color: {r: 0.80678177, g: 0.83733165, b: 0.9245283, a: 1}
+  m_Intensity: 0.42
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

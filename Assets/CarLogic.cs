@@ -15,8 +15,9 @@ public class CarLogic : MonoBehaviour
     private bool Standart = true;
     private bool Speeding = false;  //логические переменные для изменения скорости
     private bool Slowing = false;
+    private float timeScaleVelocity = 0f;
 
-    private float ChangeRate = 2f; //Скорость изменения скорости машины (чем больше тем быстрее)
+    private float ChangeTime = 2f; //Скорость изменения скорости машины (чем больше тем быстрее)
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class CarLogic : MonoBehaviour
     {
 
         rb.velocity = speed * Time.deltaTime * transform.forward;
-
+        
         if (Standart)
         {
             StandartSpeed();
@@ -78,17 +79,16 @@ public class CarLogic : MonoBehaviour
 
     public void SlowSpeed()
     {
-        speed = Mathf.Lerp(speed, slowSpeed, ChangeRate * Time.deltaTime);
+        speed = Mathf.SmoothDamp(speed, slowSpeed, ref timeScaleVelocity, ChangeTime);
     }
 
     public void StandartSpeed()
     {
-        speed = Mathf.Lerp(speed, standartSpeed, ChangeRate * Time.deltaTime);      //методы для плавного изменения скоростей
+        speed = Mathf.SmoothDamp(speed, standartSpeed, ref timeScaleVelocity, ChangeTime);     //методы для плавного изменения скоростей
     }
 
     public void FastSpeed()
     {
-        speed = Mathf.Lerp(speed, fastSpeed, ChangeRate * Time.deltaTime);
+        speed = Mathf.SmoothDamp(speed, fastSpeed, ref timeScaleVelocity, ChangeTime);
     }
-
 }
