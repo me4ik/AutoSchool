@@ -23,15 +23,17 @@ public class TimeStop : MonoBehaviour
         {
             isPaused = false;
             Debug.Log("Больше не пауза");
-        } 
+        }
 
         if (SteamVR_Actions._default.GrabPinch.GetStateDown(hand))
         {
             isPaused = false;
             Debug.Log("Больше не пауза");
         }
+    }
 
-
-
+    public void EndTimeStop()
+    {
+        isPaused = false;
     }
 }
