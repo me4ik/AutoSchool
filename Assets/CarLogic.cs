@@ -24,7 +24,7 @@ public class CarLogic : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         slowSpeed = speed / 1.3f;
-        fastSpeed = speed * 1.3f;  //определение медленной, быстрой и стандартных скоростей
+        fastSpeed = speed * 1.5f;  //определение медленной, быстрой и стандартных скоростей
         standartSpeed = speed;
     }
 

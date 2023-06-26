@@ -9,12 +9,17 @@ public class TextLogic : MonoBehaviour
 
     public bool NeedStop = false;
 
+    void Awake()
+    {
+        AdvText = "Здравстуйте, вы находитесь в виртуальной модели опасной ситуации на дороге. \n (Для продолжения дотроньтесь до текста)";
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+
         AdvText = SetText;
-        Debug.Log(AdvText);                          //Этот скрипт нужно кидать на триггеры скорости, или на любой другой триггер,
-                                                     //чтобы изменить текст подсказки
-         if (NeedStop)
+                              
+         if (NeedStop && other.CompareTag("Car"))
         {
             TimeStop.isPaused = true;        //в инспекторе можно включить флажок, чтобы при пересечении этого триггера время стопалось
             Debug.Log("Пауза");

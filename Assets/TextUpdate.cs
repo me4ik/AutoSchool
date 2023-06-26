@@ -12,10 +12,23 @@ public class TextUpdate : MonoBehaviour
     private void Awake()
     {
         advText = GetComponent<TextMeshPro>();
+        
     }
 
     void FixedUpdate()
     {
         advText.text = TextLogic.AdvText;
+    }
+
+    public void ClearText()
+    {
+
+    advText.text = "...";
+
+    }
+
+    public void SetText(string textS)
+    {
+        advText.text = textS;
     }
 }
