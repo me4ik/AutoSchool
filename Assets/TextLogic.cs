@@ -7,6 +7,7 @@ public class TextLogic : MonoBehaviour
     static public string AdvText; // статическая переменная текста подсказки
     public string SetText; //Текст на который будет меняться AdvText после пересечения триггера
     private AudioSource speech;
+    public float ContinueDelay = 3f;
 
     public bool NeedStop = false;
 
@@ -23,12 +24,23 @@ public class TextLogic : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         AdvText = SetText;
-        speech.Play();
                               
-         if (NeedStop /*&& other.CompareTag("Car")*/)
+         if (NeedStop && other.CompareTag("Car"))
         {
-            TimeStop.isPaused = true;        //в инспекторе можно включить флажок, чтобы при пересечении этого триггера время стопалось
+            speech.Play();
+            CarLogic3.Stop = true;
+            Invoke("NonStop",ContinueDelay);
             Debug.Log("Пауза");
         }
+        else if (other.CompareTag("Car"))
+        {
+          speech.Play();
+        }
+
+    }
+
+    private void NonStop()
+    {
+        CarLogic3.Stop = false;
     }
 }

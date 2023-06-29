@@ -7,8 +7,7 @@ public class MooseTrigger : MonoBehaviour
     public GameObject Moose;
     private Rigidbody MooseRB;
     public Animator Anim;
-
-    bool IsWalk = false;
+    public bool IsWalk = false;
 
     void Start()
     {
@@ -19,7 +18,7 @@ public class MooseTrigger : MonoBehaviour
     {
         if (IsWalk)
         {
-            MooseRB.velocity = 400f * Time.deltaTime * -transform.forward;
+            MooseRB.velocity = 500f * Time.deltaTime * -transform.forward;
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class CarLogic3 : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class CarLogic3 : MonoBehaviour
     private float fastSpeed;
     private float veryslow;
 
+    bool IsPinch = false;
+    static public bool Stop = false;
+
     public bool Standart = true;
     public bool Speeding = false;  //логические переменные для изменения скорости
     public bool Slowing = false;
@@ -24,19 +28,45 @@ public class CarLogic3 : MonoBehaviour
 
     public float ChangeTime = 0.1f; //Скорость изменения скорости машины (чем больше тем быстрее)
 
+    public SteamVR_Input_Sources hand;
+
     void Start()
     {
         slowSpeed = speed / 2f;
         fastSpeed = speed * 1.5f;  //определение медленной, быстрой и стандартных скоростей
         standartSpeed = speed;
-        veryslow = speed / 3;
+        veryslow = speed / 1.5f;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        ChangeSpeed();
-        transform.position = Vector3.MoveTowards(transform.position, points[CurPoint].position, speed * Time.deltaTime);
+        if (SteamVR_Actions._default.GrabPinch.GetStateDown(hand))
+        {
+            IsPinch = true;
+        }
+
+        if (SteamVR_Actions._default.GrabPinch.GetStateUp(hand))
+        {
+            IsPinch = false;
+        }
+
+        if (IsPinch && !Stop)
+        {
+            ChangeSpeed();
+            transform.position = Vector3.MoveTowards(transform.position, points[CurPoint].position, speed * Time.deltaTime);
+        }
+        else if (!Stop)
+        {
+            speed = Mathf.SmoothDamp(speed, 5f, ref timeScaleVelocity, 2f);
+            transform.position = Vector3.MoveTowards(transform.position, points[CurPoint].position, speed * Time.deltaTime);
+        }
+        else if (Stop)
+        {
+            speed = Mathf.SmoothDamp(speed, 0f, ref timeScaleVelocity, 1f);
+            transform.position = Vector3.MoveTowards(transform.position, points[CurPoint].position, speed * Time.deltaTime);
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -117,5 +147,15 @@ public class CarLogic3 : MonoBehaviour
         {
           vSlowSpeed();
         }
+    }
+
+    static public void SetStop()
+    {
+        Stop = true;
+    }
+
+    static public void NoStop()
+    {
+        Stop = false;
     }
 }
