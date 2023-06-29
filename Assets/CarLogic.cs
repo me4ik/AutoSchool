@@ -8,24 +8,28 @@ public class CarLogic : MonoBehaviour
     private Rigidbody rb;
 
     public float speed = 1500f;
+
     private float slowSpeed;
     private float standartSpeed;   //переменные скоростей
     private float fastSpeed;
+    private float veryslow;
 
     private bool Standart = true;
     private bool Speeding = false;  //логические переменные для изменения скорости
     private bool Slowing = false;
+    private bool VerySlow = false;
     private float timeScaleVelocity = 0f;
 
-    private float ChangeTime = 2f; //Скорость изменения скорости машины (чем больше тем быстрее)
+    private float ChangeTime = 10f; //Скорость изменения скорости машины (чем больше тем быстрее)
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        slowSpeed = speed / 1.3f;
+        slowSpeed = speed / 3f;
         fastSpeed = speed * 1.5f;  //определение медленной, быстрой и стандартных скоростей
         standartSpeed = speed;
+        veryslow = speed / 3;
     }
 
     // Update is called once per frame
@@ -47,6 +51,11 @@ public class CarLogic : MonoBehaviour
         if (Slowing)
         {
             SlowSpeed();
+        }
+
+        if (VerySlow)
+        {
+          vSlowSpeed();
         }
 
     }
@@ -74,6 +83,14 @@ public class CarLogic : MonoBehaviour
             Standart = true;
             Speeding = false;
         }
+
+        if (other.CompareTag("Vslow"))
+        {
+            Slowing = false;
+            Standart = false;
+            Speeding = false;
+            VerySlow = true;
+        }
     }
 
 
@@ -90,5 +107,10 @@ public class CarLogic : MonoBehaviour
     public void FastSpeed()
     {
         speed = Mathf.SmoothDamp(speed, fastSpeed, ref timeScaleVelocity, ChangeTime);
+    }
+
+    public void vSlowSpeed()
+    {
+        speed = Mathf.SmoothDamp(speed, veryslow, ref timeScaleVelocity, ChangeTime);
     }
 }

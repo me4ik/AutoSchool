@@ -3,7 +3,22 @@ guid: 2f503c360f4a44443a0a54e081a7456b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metall
+    second: {fileID: 2100000, guid: 88b725d0b2cec48448a87564926995d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Meters
+    second: {fileID: 2100000, guid: b9e82542bec5d8141be9cb73dd76dd19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sign
+    second: {fileID: 2100000, guid: 0cb1ca41c9d024c42b76d208b9eccde9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

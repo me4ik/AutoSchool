@@ -15,7 +15,7 @@ public class TimeStop : MonoBehaviour
     {
 
         timeScaleTarget = isPaused ? 0f : 1f;
-        Debug.Log(Time.timeScale);
+        Debug.Log(isPaused);
 
         //Time.timeScale = Mathf.SmoothDamp(Time.timeScale, timeScaleTarget, ref timeScaleVelocity, smoothTime);
         //Time.timeScale = Mathf.SmoothStep(Time.timeScale, timeScaleTarget, smoothTime);
@@ -29,11 +29,11 @@ public class TimeStop : MonoBehaviour
             Debug.Log("Больше не пауза");
         }
 
-       /* if (SteamVR_Actions._default.GrabPinch.GetStateDown(hand))
+        if (SteamVR_Actions._default.GrabPinch.GetStateDown(hand))
         {
             isPaused = false;
             Debug.Log("Больше не пауза");
-        }*/
+        }
 
     }
 

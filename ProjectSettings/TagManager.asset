@@ -9,6 +9,7 @@ TagManager:
   - Standart
   - Text
   - Car
+  - Vslow
   layers:
   - Default
   - TransparentFX
